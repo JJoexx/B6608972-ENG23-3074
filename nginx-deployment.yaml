@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment # 👈 ต้องชื่อนี้! ไม่ใช่ jenkins
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx # 👈 Label ต้องเป็น nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:alpine # 👈 ใช้ตัวนี้เพื่อกู้ชีพให้ Pod เป็น Running ก่อน
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
