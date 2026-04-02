@@ -4,7 +4,7 @@ metadata:
   name: nginx-service
 spec:
   selector:
-    app: nginx  # ⚠️ ต้องตรงกับ label ใน nginx-deployment.yaml เป๊ะๆ
+    app: my-nginx  # ⚠️ ต้องตรงกับ label ใน nginx-deployment.yaml เป๊ะๆ
   ports:
     - protocol: TCP
       port: 80

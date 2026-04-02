@@ -6,7 +6,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx # 👈 Label ต้องเป็น nginx
+      app: my-nginx # 👈 Label ต้องเป็น nginx
   template:
     metadata:
       labels:
